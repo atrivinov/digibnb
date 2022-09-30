@@ -9,9 +9,20 @@ class BookingsController < ApplicationController
   end
 
   def show
+
   end
 
   def create
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @service = Service.find(params[:service_id])
+    @booking.service = @service
+    if @booking.save
+      # @service.available = false
+      redirect_to booking_path(@booking)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -21,5 +32,11 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit()
   end
 end

@@ -30,7 +30,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    redirect_to service_path
+    redirect_to services_path, status: :see_other
   end
 
   private

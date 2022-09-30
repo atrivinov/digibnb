@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for [@service, @booking] do |f| %>
+    <%= f.input :start_date, placeholder: "fecha de inicio" %>
+    <%= f.input :end_date, placeholder:  "fecha de fin"  %>
+    <%= f.button :submit, class:"btn btn-dark" %>
+  <% end %>
+</div>

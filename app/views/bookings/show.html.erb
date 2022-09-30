@@ -1,2 +1,6 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
+<%= @booking.service.product_name %>
+<%= @booking.service.price %>
+<%= link_to "Edit", edit_booking_path(@booking), class:"btn btn-dark" %>
+<%= link_to "Delete", booking_path, class:"btn btn-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>

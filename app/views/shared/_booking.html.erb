@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container calendar">
   <%= simple_form_for [@service, @booking] do |f| %>
-    <%= f.input :start_date, placeholder: "fecha de inicio" %>
-    <%= f.input :end_date, placeholder:  "fecha de fin"  %>
+    <%= f.input :start_date, placeholder: "fecha de inicio", html5: true %>
+    <%= f.input :end_date, placeholder:  "fecha de fin", html5: true %>
     <%= f.button :submit, class:"btn btn-dark" %>
   <% end %>
 </div>

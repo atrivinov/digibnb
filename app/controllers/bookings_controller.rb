@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
   def index
-    @bookings = Booking.all # queremos mostrar todas las reservas pero SOLO de ese usuario,creemos se hace con PUNDIT.
+    @bookings = Booking.all.where(user_id: current_user.id)
   end
 
   def new

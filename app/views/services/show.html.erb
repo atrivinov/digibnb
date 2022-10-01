@@ -1,1 +1,14 @@
-<%= render "shared/card-product" %>
+<div class="card-trip m-5 col-3">
+  <%= cl_image_tag @service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @service.product_name %></h2>
+      <p><%= @service.description %></p>
+    </div>
+    <h2 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @service.price %></h2>
+  </div>
+</div>
+
+<%= link_to "Back to products", services_path, class:"btn btn-dark" %>
+<%= link_to "Delete", service_path, class:"btn btn-dark", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" } %>
+<%= link_to "Edit", edit_service_path(@service), class:"btn btn-dark" %>

@@ -11,7 +11,11 @@
     <%= render "shared/card-home" %>
 
     <div class="container mt-5 mb-5 text-center">
-      <%= link_to "Regístrate", new_user_registration_path, class: "btn btn-primary" %>
+      <% if user_signed_in? %>
+        <h2></h2>
+      <% else %>
+        <%= link_to "Regístrate", new_user_registration_path, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

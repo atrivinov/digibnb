@@ -1,12 +1,16 @@
-<div class="card-trip m-5 col-3">
-  <%= cl_image_tag @booking.service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @booking.service.product_name %></h2>
-      <p>Fecha inicio: <%= @booking.start_date%></p>
-      <p>Fecha final: <%= @booking.end_date%></p>
+<div class="container d-flex justify-content-center">
+  <div class="card-trip m-5 col-4">
+    <%= cl_image_tag @booking.service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
+    <h2 class="mt-4"><%= @booking.service.product_name %></h2>
+    <div class="card-trip-infos">
+      <div class="col-8">
+        <p>Fecha inicio: <%= @booking.start_date.to_date %></p>
+        <p>Fecha final: <%= @booking.end_date.to_date %></p>
+      </div>
+      <div class="col-4">
+        <h2 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @booking.service.price %></h2>
+      </div>
     </div>
-    <h2 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @booking.service.price %></h2>
   </div>
 </div>
 

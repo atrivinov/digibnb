@@ -1,9 +1,9 @@
-<div class="container">
-  <%= simple_form_for @service do |f| %>
+<div class="container col-6">
+  <%= simple_form_for @service, :html=> { class: 'service-form' } do |f| %>
     <%= f.input :product_name, placeholder: "Add your product" %>
     <%= f.input :description, placeholder:  "Add your description"  %>
     <%= f.input :price, placeholder: "Add the price" %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class:"btn btn-dark" %>
+    <%= f.button :submit, class:"bn5" %>
   <% end %>
 </div>

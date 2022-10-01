@@ -1,15 +1,13 @@
 
-<div class="column">
+<div class="container column">
   <% @services.each do |service| %>
-  <hr>
-    <div class="container m-5">
-      <%= link_to services_path(service), service.title %>
+    <div class="m-5 card-product">
+      <img src="" />
+      <div class="card-product-infos">
+        <h2> <%= link_to  service.product_name, service_path(service), class:"text-decoration-none" %> </h2>
+        <p> <%= service.description %> </p>
+        <h6> <%= service.price %> </h6>
+      </div>
     </div>
   <% end %>
 </div>
-
-<%= link_to services_path(service), class:"text-decoration-none" do %>
-        <div class="card-category" >
-          <%= service.title %>
-        </div>
-      <% end %>

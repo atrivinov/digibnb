@@ -14,6 +14,7 @@
 
 <div class="container">
   <%= link_to "Back to products", services_path, class:"bn5" %>
+  <%= link_to "Book product", new_service_booking_path(@service), class:"bn5" %>
   <%= link_to "Delete", service_path, class:"bn5", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" } %>
   <%= link_to "Edit", edit_service_path(@service), class:"bn5" %>
 </div>

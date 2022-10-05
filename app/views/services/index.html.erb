@@ -2,7 +2,7 @@
 <div class="container column">
   <% @services.each do |service| %>
     <div class="m-5 card-product">
-      <img src="https://thecouch.world/wp-content/uploads/2021/05/Netflix.jpg" />
+       <%= cl_image_tag service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
       <div class="card-product-infos">
         <h2> <%= link_to  service.product_name, service_path(service), class:"text-decoration-none" %> </h2>
         <p> <%= service.description %> </p>

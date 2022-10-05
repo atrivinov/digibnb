@@ -3,9 +3,9 @@
     <%= f.input :start_date, placeholder: "fecha de inicio", html5: true %>
     <%= f.input :end_date, placeholder:  "fecha de fin", html5: true %>
     <% if user_signed_in? %>
-      <%= f.button :submit, class:"btn btn-dark m-2" %>
+      <%= f.button :submit, class:"bn5" %>
     <% else %>
-      <%= link_to "Create account", new_user_session_path, class:"btn btn-dark m-2" %>
+      <%= link_to "Create account", new_user_session_path, class:"bn5" %>
     <% end %>
   <% end %>
 </div>

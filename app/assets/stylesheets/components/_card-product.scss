@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 .card-trip > img {
@@ -36,4 +37,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-calendar {
+  border-radius: 10px !important;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2) !important;
+  border-style: none !important;
 }

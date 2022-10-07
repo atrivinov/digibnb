@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
   belongs_to :service
 
   def date_cannot_be_in_the_past
-    if start_date.present? && start_date < Date.current
+    if start_date.present? && start_date.to_datetime.in_time_zone(start_date.zone) > DateTime.now.in_time_zone(start_date.zone)
       errors.add(:start_date, "can't be in the past")
     end
   end

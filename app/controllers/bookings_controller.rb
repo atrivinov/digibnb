@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @service = Service.find(params[:service_id])
     @booking.service = @service
     if @booking.save
-      change_status
+      #change_status
       redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity

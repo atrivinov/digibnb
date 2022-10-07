@@ -50,3 +50,19 @@
   background: #58629b;
   cursor: pointer;
 }
+
+.dropdown-menu {
+  background: linear-gradient(45deg, #0a050e, #2F0743);
+  opacity: 0.5;
+}
+
+.dropdown-item {
+  background: transparent;
+  border: #58629b;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-item:hover {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+}

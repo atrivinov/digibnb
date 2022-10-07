@@ -1,7 +1,28 @@
-<div class="card m-5">
-  <% @bookings.each do |booking| %>
-    <h2><%= booking.service.product_name %></h2>
-    <p><%= booking.service.description %></p>
-    <p>Pagina sigue en proceso</p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+        <div class="card m-5">
+        <h2>Your Bookings!</h2>
+          <% @bookings.each do |booking| %>
+            <h2><%= booking.service.product_name %></h2>
+            <p><%= booking.service.description %></p>
+            <p>Pagina sigue en proceso</p>
+          <% end %>
+        </div>
+      </div>
+    <div class="col-lg-6">
+        <div class="card m-5">
+        <h2>Your Profile!</h2>
+        <h2><%= current_user.first_name%> <%= current_user.last_name  %></h2>
+        <p>Tu Correo Electronico es: <%= current_user.email %></p>
+        <p>Aqui puedes ver tus productos ofertados: </p>
+        <ul>
+            <% @current_user.services.each do |service| %>
+          <li>
+              <%= service.product_name %>
+          </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
 </div>

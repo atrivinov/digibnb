@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @service = Service.find(params[:service_id])
     @booking.service = @service
     if @booking.save
-      # @service.available = false
+      #change_status
       redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
@@ -46,5 +46,12 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def change_status
+    @service = Service.find(params[:service_id])
+    until @booking.end_date > DateTime.now
+      @service.available = false
+    end
   end
 end

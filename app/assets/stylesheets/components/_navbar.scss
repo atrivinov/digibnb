@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,44 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+
+.search-container {
+  background: linear-gradient(90deg, #0a050e, #2F0743);
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+}
+
+.search-bar {
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 5px 10px;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.search-button {
+  border: 0;
+  border-radius: 50px;
+  background: #58629b;
+  cursor: pointer;
 }

@@ -1,18 +1,18 @@
 <div>
-  <%= render "shared/banner" %>
-  <div class="container text-center mt-4 mb-10">
-    <h1>Somos DigiBnb</h1>
-    <p class="m-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo necessitatibus error eveniet, molestiae quidem placeat quia esse, porro eligendi ipsa nihil libero. Rem eos voluptatibus tenetur impedit error id quaerat!
-    Nihil optio qui consectetur natus expedita! Labore iure autem corporis expedita accusantium repudiandae maxime accusamus sed maiores incidunt voluptatum consequuntur recusandae quos mollitia, eos, debitis ratione officia ea! Cumque, consectetur?
-    Recusandae repellat suscipit numquam enim itaque, sed magnam vero enim sequi iusto nobis soluta quaerat ratione odit voluptate ea quos ad perferendis minima consectetur eligendi. Inventore.</p>
+  <div class="container text-center mb-10">
+    <h1 class="digibnb-title">Somos DigiBnb</h1>
+    <span class="animation-text">¡Disfruta las plataformas digitales al máximo!</span>
+    <%# <%= render "shared/banner" %>
 
     <%= render "shared/card-home" %>
+
+    <p class="home-text">En nuestra app puedes contratar distintos servicios de streaming por el tiempo que desees a través de otros usuarios y sin pagar mensual o anualmente planes multiples que no usarás!.</p>
 
     <div class="container mt-5 mb-5 text-center">
       <% if user_signed_in? %>
         <h2></h2>
       <% else %>
-        <%= link_to "Regístrate", new_user_registration_path, class: "btn btn-primary" %>
+        <%= link_to "Regístrate", new_user_registration_path, class: "btn-home" %>
       <% end %>
     </div>
   </div>

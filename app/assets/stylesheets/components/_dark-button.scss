@@ -24,3 +24,23 @@ div{
   color: black;
   background-color: rgba(94, 93, 95, 0.993);
 }
+
+.btn-home {
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: rgb(176, 176, 176);
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #444;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: all 1s ease;
+  box-shadow: .3rem .3rem 1rem rgb(81, 81, 81);
+  text-decoration: none;
+}
+
+.btn-home:hover {
+  box-shadow: .3rem .3rem 1rem rgb(139, 139, 139);
+  color: rgb(255, 255, 255);
+}

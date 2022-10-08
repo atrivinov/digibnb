@@ -1,5 +1,5 @@
-<div class="container mt-5">
-  <div class="card p-5 rounded">
+<div class="contain-img d-flex align-items-center justify-content-center">
+  <div class="service-form">
     <h2 class="mb-4">Log in</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
     data: {turbo: false}) do |f| %>
@@ -13,7 +13,7 @@
       <%# <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
       <div class="form-actions text-center mt-5">
-        <%= f.button :submit, "Log in", class: "btn btn-primary inline w-50 rounded" %>
+        <%= f.button :submit, "Log in", class: "bn5" %>
           <div class="d-flex justify-content-center mt-5">
             <%= render "devise/shared/links"  %>
           </div>

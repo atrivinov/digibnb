@@ -14,11 +14,19 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    # @bookings = Booking.where(service_id: params[:service_id])
+    # .and(Booking.where('start_date > ?', Date.today))
+    # @bookings.each do |booking|
+    #   if booking.start_date <= @booking.start_date && Date.today < @booking.end_date
+    #     @service.available = false
+    #   else
+    #     @service.available = true
+    #   end
+    # end
     @booking.user = current_user
     @service = Service.find(params[:service_id])
     @booking.service = @service
     if @booking.save
-      #change_status
       redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
@@ -30,6 +38,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
+    # change_status
     redirect_to booking_path(@booking)
   end
 
@@ -50,8 +59,10 @@ class BookingsController < ApplicationController
 
   def change_status
     @service = Service.find(params[:service_id])
-    until @booking.end_date > DateTime.now
+    if @booking.start_date < Date.today && Date.today < @booking.end_date
       @service.available = false
+    else
+      @service.available = true
     end
   end
 end

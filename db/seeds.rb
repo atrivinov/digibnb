@@ -12,10 +12,10 @@ User.destroy_all
 
 
 puts "creando usuarios"
-user1 = User.create(first_name: "Alexandra", Last_name: "Triviño", email: "alexa@gmail.com", password: "123456")
-user2 = User.create(first_name: "Andres", Last_name: "Ibañez", email: "andres@gmail.com", password: "123456")
-user3 = User.create(first_name: "Mateo", Last_name: "Calle", email: "mateo@gmail.com", password: "123456")
-user4 = User.create(first_name: "Daniela", Last_name: "Soto", email: "daniela@gmail.com", password: "123456")
-user5 = User.create(first_name: "Linda", Last_name: "Mejia", email: "linda@gmail.com", password: "123456")
+user1 = User.create(first_name: "Alexandra", last_name: "Triviño", email: "alexa@gmail.com", password: "123456")
+user2 = User.create(first_name: "Andres", last_name: "Ibañez", email: "andres@gmail.com", password: "123456")
+user3 = User.create(first_name: "Mateo", last_name: "Calle", email: "mateo@gmail.com", password: "123456")
+user4 = User.create(first_name: "Daniela", last_name: "Soto", email: "daniela@gmail.com", password: "123456")
+user5 = User.create(first_name: "Linda", last_name: "Mejia", email: "linda@gmail.com", password: "123456")
 
 puts "Usuarios creados"

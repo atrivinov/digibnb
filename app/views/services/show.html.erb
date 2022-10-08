@@ -1,20 +1,23 @@
-<div class="d-flex justify-content-center">
-  <div class="card-trip m-5 col-3">
-    <%= cl_image_tag @service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @service.product_name %></h2>
-        <p><%= @service.description %></p>
-        <p id="status"><%= @service.available %></p>
+<div class="contain-img">
+  <div class="container d-flex justify-content-center mb-5 pt-5">
+    <div class="card-show">
+      <div class="cover-card">
+        <%= cl_image_tag @service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
       </div>
-      <h2 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @service.price %></h2>
+      <h2> <%= link_to  @service.product_name, service_path(@service), class:"card-title" %> </h2>
+      <p> <%= @service.description %> </p>
+      <hr>
+      <div class="footer-card">
+        <p><%= @service.user.first_name %> <%= @service.user.last_name %></p>
+        <h3 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @service.price %></h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <%= link_to "Back to products", services_path, class:"bn5" %>
-  <%= link_to "Book product", new_service_booking_path(@service), class:"bn5" %>
-  <%= link_to "Delete", service_path, class:"bn5", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" } %>
-  <%= link_to "Edit", edit_service_path(@service), class:"bn5" %>
+  <div class="container">
+    <%= link_to "Back to products", services_path, class:"bn5" %>
+    <%= link_to "Book product", new_service_booking_path(@service), class:"bn5" %>
+    <%= link_to "Delete", service_path, class:"bn5", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this product?" } %>
+    <%= link_to "Edit", edit_service_path(@service), class:"bn5" %>
+  </div>
 </div>

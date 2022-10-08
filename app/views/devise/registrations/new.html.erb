@@ -1,6 +1,6 @@
-<div class="container mb-5 mt-5">
+<div class="contain-img d-flex align-items-center justify-content-center">
 
-  <div class="card p-5 rounded">
+  <div class="service-form">
     <h2>Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
       data: {turbo: false}) do |f| %>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="form-actions d-flex">
-      <%= f.button :submit, "Sign up" , class:"btn btn-primary m-2" %>
+      <%= f.button :submit, "Sign up" , class:"bn5" %>
       <%= render "devise/shared/links" %>
     </div>
     <% end %>

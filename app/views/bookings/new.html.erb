@@ -1,25 +1,21 @@
-<div class="container mt-5 d-flex justify-content-center">
-  <div>
-    <h1 class="mb-5">Reserve the Product</h1>
-    <div class="row">
-      <div class="col-6 justify-content-center">
-        <div class="card-trip">
-          <%= cl_image_tag @service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
-              <h2 class="mt-4"><%= @service.product_name %></h2>
-          <div class="card-trip-infos">
-            <div>
-              <p><%= @service.description %></p>
-              <p id="status"><%= @service.available %></p>
-            </div>
-            <h2 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @service.price %></h2>
-          </div>
-        </div>
+<div class="contain-img">
+  <h1 class="my-5">Reserve the Product</h1>
+
+  <div class="container m-5 d-flex justify-content-center">
+    <div class="card-show">
+      <div class="cover-card">
+        <%= cl_image_tag @service.photo.key, height: 450, width: 450, crop: :fill, class: "card-img-top " %>
       </div>
-      <div class="col-6 d-flex justify-content-center">
-        <div class="col-12 p-4 rounded card card-calendar">
-          <%= render 'shared/booking' %>
-        </div>
+      <h2> <%= link_to  @service.product_name, service_path(@service), class:"card-title" %> </h2>
+      <p> <%= @service.description %> </p>
+      <hr>
+      <div class="footer-card">
+        <p><%= @service.user.first_name %> <%= @service.user.last_name %></p>
+        <h3 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @service.price %></h3>
       </div>
+    </div>
+    <div class="p-4 card-show card-calendar d-flex justify-content-center align-items-center">
+      <%= render 'shared/booking' %>
     </div>
   </div>
 </div>

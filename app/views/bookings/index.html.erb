@@ -1,28 +1,60 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-        <div class="card m-5">
-        <h2>Your Bookings!</h2>
-          <% @bookings.each do |booking| %>
-            <h2><%= booking.service.product_name %></h2>
-            <p><%= booking.service.description %></p>
-            <p>Pagina sigue en proceso</p>
-          <% end %>
-        </div>
-      </div>
-    <div class="col-lg-6">
-        <div class="card m-5">
-        <h2>Your Profile!</h2>
+<div class="contain-img">
+  <div class="main-container">
+    <div class="profile-info card-product">
+      <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" alt="avatar">
+      <div>
         <h2><%= current_user.first_name%> <%= current_user.last_name  %></h2>
         <p>Tu Correo Electronico es: <%= current_user.email %></p>
-        <p>Aqui puedes ver tus productos ofertados: </p>
-        <ul>
-            <% @current_user.services.each do |service| %>
-          <li>
-              <%= service.product_name %>
-          </li>
-          <% end %>
-        </ul>
+      </div>
+    </div>
+    <div class="user-activity">
+      <div class="services">
+        <h2>Tus servicios:</h2>
+        <% @current_user.services.each do |service| %>
+          <div class="card-product">
+            <h3><%= link_to service.product_name, service_path(service), class: "card-title" %></h3>
+          </div>
+        <% end %>
+      </div>
+      <div class="bookings">
+        <h2>Tus reservas:</h2>
+        <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <h3><%= link_to booking.service.product_name, booking_path(booking), class: "card-title" %></h3>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- <div class="contain-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+          <div class="card m-5">
+          <h2 class="mb-5 pt-5">Your Bookings!</h2>
+            <% @bookings.each do |booking| %>
+              <h2><%= booking.service.product_name %></h2>
+              <p><%= booking.service.description %></p>
+              <p>Pagina sigue en proceso</p>
+            <% end %>
+          </div>
+        </div>
+      <div class="col-lg-6">
+          <div class="card m-5">
+          <h2>Your Profile!</h2>
+          <h2><%= current_user.first_name%> <%= current_user.last_name  %></h2>
+          <p>Tu Correo Electronico es: <%= current_user.email %></p>
+          <p>Aqui puedes ver tus productos ofertados: </p>
+          <ul>
+              <% @current_user.services.each do |service| %>
+            <li>
+                <%= service.product_name %>
+            </li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div> -->

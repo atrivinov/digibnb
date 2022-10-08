@@ -2,6 +2,10 @@
   <div class="container">
     <h1>Con <strong>Digi</strong>Bnb <strong>compartes</strong>!</h1>
     <p>Intercambia y sacale provecho a tus cuentas digitales.</p>
-    <%= link_to "Regístrate", new_user_registration_path, class: " sign btn" %>
+    <% if user_signed_in? %>
+        <h2></h2>
+      <% else %>
+        <%= link_to "Regístrate", new_user_registration_path, class: " sign btn" %>
+      <% end %>
   </div>
 </div>

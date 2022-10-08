@@ -1,7 +1,12 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[show edit update destroy]
   def index
-    @services = Service.all
+    if params[:query].present?
+      sql_query = "product_name ILIKE :query OR description ILIKE :query"
+      @services = Service.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @services = Service.all
+    end
   end
 
   def show

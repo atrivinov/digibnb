@@ -1,1 +1,22 @@
-<%= render 'shared/booking' %>
+<div class="contain-img">
+  <h1 class="mb-5 pt-5">Edit your booking</h1>
+
+  <div class="container m-5 d-flex justify-content-center">
+    <div class="card-show">
+      <div class="cover-card">
+        <%= cl_image_tag @booking.service.photo.key, class: "card-img-top " %>
+      </div>
+      <h2><%= @booking.service.product_name %></h2>
+      <p><%= @booking.service.description %></p>
+      <p id="status"><%= @booking.service.available %></p>
+      <hr>
+      <div class="footer-card">
+        <p><%= @booking.service.user.first_name %> <%= @booking.service.user.last_name %></p>
+        <h3 class="card-trip-pricing"><i class="fa-solid fa-dollar-sign"></i> <%= @booking.service.price %></h3>
+      </div>
+    </div>
+    <div class="p-4 card-show card-calendar d-flex justify-content-center align-items-center">
+      <%= render 'shared/booking' %>
+    </div>
+  </div>
+</div>

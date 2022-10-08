@@ -1,40 +1,52 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-dark navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://cdn-icons-png.flaticon.com/512/6565/6565536.png" %>
+    <%= link_to "/#", class: "navbar-brand mx-4" do %>
+      <%= image_tag "https://cdn-icons-png.flaticon.com/512/6636/6636538.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Servicios", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Reservas", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://cdn-icons-png.flaticon.com/512/3177/3177440.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Editar mi perfil", "#", class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="navbar navbar-dark">
+        <div class="search-container">
+          <%= form_with url: services_path, method: :get, class: "search-bar" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "search-input",
+                placeholder: "Find a service"
+              %>
+              <%= submit_tag "Search", class: "search-button" %>
+            <% end %>
+        </div>
+
+        <ul class="navbar-nav me-auto mx-4">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Inicio", "/#", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Servicios", "/services", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Reservas", "/bookings", class: "nav-link me-3" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://cdn-icons-png.flaticon.com/512/7826/7826485.png", class: "fa-thin fa-user avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Vergi mi perfil", bookings_path, class: "dropdown-item" %>
+                <%= link_to "Cerrar sesión", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Registrarse", new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
     </div>
   </div>
 </div>

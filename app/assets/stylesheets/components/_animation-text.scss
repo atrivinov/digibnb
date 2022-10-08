@@ -1,0 +1,23 @@
+.animation-text {
+  display: block;
+  font-family: monospace;
+  font-size: 35px;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 46ch;
+  animation: typing 2s steps(46),
+  blink .5s infinite step-end alternate;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
